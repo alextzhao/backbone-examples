@@ -1,17 +1,12 @@
 $(function() {
-  // TODO: define a service collection here
-  
-  var ServiceList = Backbone.Collection.extend({
 
-    // Will hold objects of the Service model
-    model: window.Service,
+  var ServiceCollection = Backbone.Collection.extend({
+    model: window.ServiceModel, // if browser can't find variable it looks at window by default.
 
-    // Return an array only with the checked services
-    getChecked: function(){
-      return this.where({checked:true});
+    getChecked: function() {
+      return this.where({checked: true}); // the where function by default looks at the model.
     }
   });
 
-  window.ServiceList = ServiceList;
-  
+  window.ServiceCollection = ServiceCollection;
 });

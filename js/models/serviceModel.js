@@ -1,23 +1,22 @@
-$(function() {
+$(function() {  //synonymous with $(document).ready()
+
   // TODO: define a service model here
-  
-  var Service = Backbone.Model.extend({
-
+  var ServiceModel = Backbone.Model.extend({
+    // last thing that happens when constructing a model object.
     initialize: function() {
-      console.log('Creating a new service for ' + this.get('title'));
+      console.log('Made a new service, with title: ' + this.get('title'));
     },
 
-    defaults:{
-      title: 'My service',
-      price: 100,
-      checked: false
+    defaults: {
+      'title': "New service",
+      'price': 100,
+      'checked': false,
     },
 
-    // Helper function for checking/unchecking a service
-    toggle: function(){
+    toggle: function() {
       this.set('checked', !this.get('checked'));
     }
   });
 
-  window.Service = Service;
+    window.ServiceModel = ServiceModel;
 });
